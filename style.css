@@ -50,6 +50,12 @@ main{
     align-items: baseline;
 }
 
+.bottomInfo .title{
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    max-width: fit-content;
+}
+
 .bottomInfo *{
     margin: 0;
 }
@@ -57,22 +63,3 @@ main{
 #cartList{
     max-height: 80%;
 }
-
-/* .topInfo{
-    display: flex;
-    justify-content: end;
-    margin: 1em;
-} */
-
-/* .topInfo button{
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 0.5em;
-    text-align: center;
-    border: none;
-    margin: 0 0.1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
