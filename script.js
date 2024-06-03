@@ -25,6 +25,8 @@ let showCards = function(arr){
 
 // creazione di una card
 let createCard = function(book){
+    let cardWrapper = document.createElement('div')
+    cardWrapper.className = 'cardWrapper col'
     let card = document.createElement('div')
     card.className = 'myCard'
     card.dataset.asin = book.asin
@@ -32,7 +34,9 @@ let createCard = function(book){
     card.dataset.price = book.price
     card.innerHTML = 
     `
-    <img src="${book.img}" class="album-img card-img-top" alt="${book.title}">
+    <div class="imgWrapper">
+        <img src="${book.img}" class="album-img card-img-top" alt="${book.title}">
+    </div>
     <div class="myCardBody">
         <div class="topInfo">
             <button class="btn btn-success" onClick="toggleCart(this.parentElement.parentElement.parentElement)">Buy</button>
@@ -45,7 +49,8 @@ let createCard = function(book){
         </div>
     </div>
     `
-    return card
+    cardWrapper.appendChild(card)
+    return cardWrapper
 }
 
 // funzione aggiunta\rimozione in carrello
