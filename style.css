@@ -26,18 +26,20 @@ main{
 .myCard {
     border: 1px solid black;
     border-radius: 0.5em;
-    /* margin: 1em; */
+    height: 100%;
     padding: 0;
     z-index: 0;
+    position: relative;
 }
 
 .imgWrapper {
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 
 .myCard img{
     border-radius: 0.5em;
+    object-fit: cover;
     overflow: hidden;
     z-index: 0;
 }
@@ -45,26 +47,70 @@ main{
 .myCardBody{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+    height: 30%;
+    
 }
 
 .myCardBody h5{
     color: black;
 }
 
+.topInfo{
+    position: absolute;
+    top: 0;
+}
+
 .bottomInfo{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    text-overflow: ellipsis;
+    color: black;
+    text-align: center;
+}
+
+.bottomInfo p{
+    overflow: hidden;
+    font-weight: bold;
 }
 
 .bottomInfo *{
     margin: 0;
 }
 
+.title{
+    width: 100%;
+    padding: 1em 0 0;
+}
+
+.genreAndPrice{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5em 1em;
+}
+
 #cartList{
     max-height: 80%;
+}
+
+.cartElement{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cartElement p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cartElement p:nth-child(2){
+    
+}
+
+.cartElement button{
+    border-radius: 50%;
 }
