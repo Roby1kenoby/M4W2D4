@@ -1,0 +1,24 @@
+.card{
+    width: 500px;
+    /* min-width: min-content; */
+}
+
+.card-body{
+    min-width: min-content;
+}
+
+.card-body h3{
+    text-align: center;
+}
+
+.card-body p{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+}

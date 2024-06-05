@@ -41,9 +41,16 @@ let createCard = function(book){
         <div class="topInfo">
             <button class="btn btn-success" onClick="toggleCart(this.parentElement.parentElement.parentElement)">Buy</button>
             <button class="btn btn-danger d-none" onClick="toggleCart(this.parentElement.parentElement.parentElement)">Remove</button>
+            <button class="btn btn-secondary" onClick="removeCard(this.parentElement.parentElement.parentElement)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x-fill" viewBox="0 0 16 16">
+                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6.854 6.146 8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 1 1 .708-.708"/>
+                </svg>
+            </button>
         </div>
         <div class="bottomInfo">
-                <p class="title card-title">${book.title}</h5>
+                <a href="./dettagli.html?id=${book.asin}">
+                    <p class="title card-title">${book.title}</h5>
+                </a>
                 <p class="genreAndPrice"><span>${book.category}</span> <span>${book.price}€</span></p>
         </div>
     </div>
@@ -79,6 +86,14 @@ let toggleCart = function(card){
         btnRemove.classList.remove('d-none')    
     }
     refreshCart()
+}
+
+// funzione per eliminare una card
+let removeCard = function(card){
+    let asin = card.dataset.asin
+    let cardToRemove = document.querySelector(`.myCard[data-asin="${asin}"`).parentElement
+    cardToRemove.remove()
+    
 }
 
 // funzione per aggiornare il contatore del carrello
@@ -174,3 +189,4 @@ let calcTotal = function(){
 onload = async (e) => {
     await loadBooks()
 }
+

@@ -56,8 +56,19 @@ main{
 }
 
 .topInfo{
+    width: 100%;
     position: absolute;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topInfo button{
+    opacity: 50%;
+}
+
+.topInfo button:hover{
+    opacity: 100%;
 }
 
 .bottomInfo{
